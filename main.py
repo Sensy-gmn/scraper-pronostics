@@ -19,12 +19,12 @@ def display_sports():
 
 def scrap_sport(choice):
     if choice is None:
-        raise ValueError("No choice provided")
+        raise ValueError("Choix invalide")
 
     if choice in Allsports:
         urlBase = Allsports_all_url.format(choice)
     else:
-        raise ValueError("Invalid choice provided")
+        raise ValueError("Choix invalide")
 
     opposition = []
     match_number = 1
@@ -51,7 +51,7 @@ def scrap_sport(choice):
             bet_nows = soup.find_all(class_="col-span-3 flex flex-col justify-center items-center bg-white p-0.5 rounded-md")
 
             if not matchs:
-                print("No more matches found, breaking the loop.")
+                print("Aucun match trouvé")
                 break
 
             it = iter(matchs)
@@ -85,14 +85,14 @@ def scrap_sport(choice):
                     seen_matches.add(match_id)
                     match_number += 1
                 except StopIteration:
-                    print("StopIteration encountered, breaking the loop.")
+                    print("Aucun match trouvé")
                     break
                 except AttributeError as e:
                     print(f"Error processing match data: {e}")
                     continue
 
             if not new_opposition:
-                print("No new opposition found, breaking the loop.")
+                print("Aucun match trouvé")
                 break
 
             opposition.extend(new_opposition)
