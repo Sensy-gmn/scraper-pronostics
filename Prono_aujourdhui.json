@@ -1,0 +1,42 @@
+[
+  {
+    "match_id": 1,
+    "league": "Europe\n                                        - Ligue des Nations",
+    "opposant_1": "Écosse",
+    "opposant_2": "Croatie",
+    "pronostic": "Les deux équipes marquent",
+    "cotation": 1.74
+  },
+  {
+    "match_id": 2,
+    "league": "Europe\n                                        - Ligue des Nations",
+    "opposant_1": "Danemark",
+    "opposant_2": "Espagne",
+    "pronostic": "Portugal gagne",
+    "cotation": 1.55
+  },
+  {
+    "match_id": 3,
+    "league": "Europe\n                                        - Ligue des Nations",
+    "opposant_1": "Biélorussie",
+    "opposant_2": "Slovaquie",
+    "pronostic": "Nul ou Suisse",
+    "cotation": 1.55
+  },
+  {
+    "match_id": 4,
+    "league": "Europe\n                                        - Ligue des Nations",
+    "opposant_1": "Irlande Du Nord",
+    "opposant_2": "Liechtenstein",
+    "pronostic": "Espagne gagne",
+    "cotation": 1.52
+  },
+  {
+    "match_id": 5,
+    "league": "Europe\n                                        - Ligue des Nations",
+    "opposant_1": "Bolivie",
+    "opposant_2": "Aryna Sabalenka",
+    "pronostic": "Bulgarie gagne",
+    "cotation": 1.83
+  }
+]
