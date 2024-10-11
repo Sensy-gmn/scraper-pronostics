@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-urlBase = "https://www.sportytrader.com/pronostics/tennis/aujourdhui/"
+urlBase = "https://www.sportytrader.com/pronostics/"
 
 response = requests.get(urlBase)
 response.encoding = response.apparent_encoding
