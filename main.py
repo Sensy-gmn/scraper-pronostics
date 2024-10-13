@@ -1,10 +1,12 @@
 import requests
 import time
 from bs4 import BeautifulSoup
-import json
 from datetime import datetime
 import re
 import pytz
+from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
 
 def scrap_sport(url):
@@ -119,21 +121,43 @@ def scrap_sport(url):
 
     
 def save_data(data):
-    #
-    # Obtenir la date actuelle
-    #
-    # Crée un nom de fichier avec la date
-    #
-    # Sauvegarder les données dans le fichier
-    #
-    # Définir le fuseau horaire de Paris
+    db = get_database()
     paris_tz = pytz.timezone('Europe/Paris')
+    current_date = datetime.now(paris_tz)
 
-    current_date = datetime.now(paris_tz).strftime("%Y-%m-%d")
-    filename = f"pronostics_{current_date}.json"
+    matches_collection = db.matches
 
-    with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    for sport, matches in data.items():
+        for match in matches:
+            match_document = {
+                'scraping_date': current_date,
+                'sport': sport,
+                'jour': match['jour'],
+                'heure': match['heure'],
+                'opposant_1': match['opposant_1'],
+                'opposant_2': match['opposant_2'],
+                'pronostic': match['pronostic'],
+                'cote': match['cote']
+            }
+            
+            # id unique pour chaque match
+            match_id = f"{match['jour']}_{match['heure']}_{match['opposant_1']}_{match['opposant_2']}"
+
+            # update_one  éviter les doublons
+            result = matches_collection.update_one(
+                {'_id': match_id},
+                {'$set': match_document},
+                upsert=True
+            )
+
+    print(f"Données sauvegardées/mises à jour dans MongoDB avec succès !")
+
+def get_database():
+    
+    load_dotenv()
+    connection_string = os.getenv('MONGODB_URI')
+    client = MongoClient(connection_string)
+    return client['pronostics']
 
 def main():
     sports = ['football', 'tennis', 'basket', 'rugby', 'handball']
@@ -152,10 +176,10 @@ def main():
         else:
             print(f"Échec du scraping pour {sport}")
         
-        time.sleep(5)  # 5 secondes avant la prochaine requête
+        time.sleep(5)  # 5 secondes entre chaquerequête
 
     save_data(all_sports_data)
-    print("Fichier JSON créé avec succès !")
+    print("Données sauvegardées dans MongoDB avec succès !")
 
 if __name__ == "__main__":
     main()
