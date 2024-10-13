@@ -2,16 +2,6 @@
     "football": [
         {
             "match_id": 1,
-            "league": "Monde - Coupe du Monde",
-            "jour": "12/10/2024",
-            "heure": "03h30",
-            "opposant_1": "Pérou",
-            "opposant_2": "Uruguay",
-            "pronostic": "Uruguay gagne",
-            "cote": 1.95
-        },
-        {
-            "match_id": 2,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "15h00",
@@ -21,17 +11,17 @@
             "cote": 1.74
         },
         {
-            "match_id": 3,
+            "match_id": 2,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "18h00",
             "opposant_1": "Bulgarie",
             "opposant_2": "Luxembourg",
             "pronostic": "Bulgarie gagne",
-            "cote": 1.76
+            "cote": 1.74
         },
         {
-            "match_id": 4,
+            "match_id": 3,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "18h00",
@@ -41,7 +31,7 @@
             "cote": 1.53
         },
         {
-            "match_id": 5,
+            "match_id": 4,
             "league": "Espagne - LaLiga 2",
             "jour": "12/10/2024",
             "heure": "18h30",
@@ -51,37 +41,37 @@
             "cote": 2.0
         },
         {
-            "match_id": 6,
+            "match_id": 5,
             "league": "Espagne - LaLiga 2",
             "jour": "12/10/2024",
             "heure": "18h30",
             "opposant_1": "Eibar",
             "opposant_2": "Eldense",
             "pronostic": "Eibar gagne",
-            "cote": 1.62
+            "cote": 1.64
         },
         {
-            "match_id": 7,
+            "match_id": 6,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "20h45",
             "opposant_1": "Biélorussie",
             "opposant_2": "Irlande Du Nord",
             "pronostic": "Irlande Du Nord gagne",
-            "cote": 1.93
+            "cote": 1.87
         },
         {
-            "match_id": 8,
+            "match_id": 7,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "20h45",
             "opposant_1": "Chypre",
             "opposant_2": "Roumanie",
             "pronostic": "Roumanie gagne",
-            "cote": 1.47
+            "cote": 1.45
         },
         {
-            "match_id": 9,
+            "match_id": 8,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "20h45",
@@ -91,37 +81,37 @@
             "cote": 1.59
         },
         {
-            "match_id": 10,
+            "match_id": 9,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "20h45",
             "opposant_1": "Serbie",
             "opposant_2": "Suisse",
             "pronostic": "Nul ou Suisse",
-            "cote": 1.44
+            "cote": 1.42
         },
         {
-            "match_id": 11,
+            "match_id": 10,
             "league": "Europe - Ligue des Nations",
             "jour": "12/10/2024",
             "heure": "20h45",
             "opposant_1": "Espagne",
             "opposant_2": "Danemark",
             "pronostic": "Espagne gagne",
-            "cote": 1.39
+            "cote": 1.42
         },
         {
-            "match_id": 12,
+            "match_id": 11,
             "league": "Etats-Unis - Major League Soccer",
             "jour": "13/10/2024",
             "heure": "01h30",
             "opposant_1": "Columbus Crew",
             "opposant_2": "New England",
             "pronostic": "Columbus Crew gagne",
-            "cote": 1.31
+            "cote": 1.33
         },
         {
-            "match_id": 13,
+            "match_id": 12,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "15h00",
@@ -131,7 +121,7 @@
             "cote": 1.65
         },
         {
-            "match_id": 14,
+            "match_id": 13,
             "league": "Espagne - LaLiga 2",
             "jour": "13/10/2024",
             "heure": "16h15",
@@ -141,27 +131,27 @@
             "cote": 1.87
         },
         {
-            "match_id": 15,
+            "match_id": 14,
             "league": "Espagne - LaLiga 2",
             "jour": "13/10/2024",
             "heure": "16h15",
             "opposant_1": "Real Oviedo",
             "opposant_2": "Almería",
             "pronostic": "Real Oviedo gagne",
-            "cote": 2.25
+            "cote": 2.23
         },
         {
-            "match_id": 16,
+            "match_id": 15,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "18h00",
             "opposant_1": "Finlande",
             "opposant_2": "Angleterre",
             "pronostic": "Angleterre gagne",
-            "cote": 1.31
+            "cote": 1.3
         },
         {
-            "match_id": 17,
+            "match_id": 16,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "18h00",
@@ -171,7 +161,7 @@
             "cote": 1.51
         },
         {
-            "match_id": 18,
+            "match_id": 17,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "18h00",
@@ -181,7 +171,7 @@
             "cote": 1.97
         },
         {
-            "match_id": 19,
+            "match_id": 18,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "18h00",
@@ -191,17 +181,17 @@
             "cote": 1.66
         },
         {
-            "match_id": 20,
+            "match_id": 19,
             "league": "Espagne - LaLiga 2",
             "jour": "13/10/2024",
             "heure": "18h30",
             "opposant_1": "Grenade",
             "opposant_2": "Córdoba",
             "pronostic": "Grenade gagne",
-            "cote": 1.88
+            "cote": 1.9
         },
         {
-            "match_id": 21,
+            "match_id": 20,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "20h45",
@@ -211,7 +201,7 @@
             "cote": 1.82
         },
         {
-            "match_id": 22,
+            "match_id": 21,
             "league": "Europe - Ligue des Nations",
             "jour": "13/10/2024",
             "heure": "20h45",
@@ -221,6 +211,16 @@
             "cote": 2.43
         },
         {
+            "match_id": 22,
+            "league": "Europe - Ligue des Nations",
+            "jour": "13/10/2024",
+            "heure": "20h45",
+            "opposant_1": "Iles Féroé",
+            "opposant_2": "Lettonie",
+            "pronostic": "Nul ou Lettonie",
+            "cote": 1.51
+        },
+        {
             "match_id": 23,
             "league": "Espagne - LaLiga 2",
             "jour": "13/10/2024",
@@ -228,49 +228,17 @@
             "opposant_1": "Elche",
             "opposant_2": "Deportivo La Corogne",
             "pronostic": "Elche gagne",
-            "cote": 2.19
-        }
-    ],
-    "tennis": [
-        {
-            "match_id": 1,
-            "league": "ATP - ATP Shanghai",
-            "jour": "12/10/2024",
-            "heure": "06h30",
-            "opposant_1": "Jannik Sinner",
-            "opposant_2": "Tomas Machac",
-            "pronostic": "Jannik Sinner gagne en 2 sets",
-            "cote": 1.36
+            "cote": 2.24
         },
         {
-            "match_id": 2,
-            "league": "ATP - ATP Shanghai",
-            "jour": "12/10/2024",
-            "heure": "06h30",
-            "opposant_1": "Novak Djokovic",
-            "opposant_2": "Taylor Fritz",
-            "pronostic": "Victoire de N.Djokovic en 3 sets",
-            "cote": 3.35
-        },
-        {
-            "match_id": 3,
-            "league": "WTA - WTA Wuhan",
-            "jour": "12/10/2024",
-            "heure": "08h30",
-            "opposant_1": "Aryna Sabalenka",
-            "opposant_2": "Cori Gauff",
-            "pronostic": "Match en 3 sets",
-            "cote": 2.1
-        },
-        {
-            "match_id": 4,
-            "league": "WTA - WTA Wuhan",
-            "jour": "12/10/2024",
-            "heure": "11h00",
-            "opposant_1": "Qinwen Zheng",
-            "opposant_2": "Xin Yu Wang",
-            "pronostic": "Qinwen Zheng gagne en 2 sets",
-            "cote": 1.55
+            "match_id": 24,
+            "league": "Etats-Unis - Major League Soccer",
+            "jour": "14/10/2024",
+            "heure": "01h30",
+            "opposant_1": "Vancouver Whitecaps",
+            "opposant_2": "Los Angeles FC",
+            "pronostic": "Los Angeles FC gagne",
+            "cote": 2.15
         }
     ],
     "basket": [
@@ -293,6 +261,18 @@
             "opposant_2": "Limoges",
             "pronostic": "14.5 points ou plus pour Nicolas Lang",
             "cote": 1.63
+        }
+    ],
+    "rugby": [
+        {
+            "match_id": 1,
+            "league": "France - Top 14",
+            "jour": "12/10/2024",
+            "heure": "16h30",
+            "opposant_1": "Bayonne",
+            "opposant_2": "Atlantique Stade Rochelais",
+            "pronostic": "La Rochelle gagne, match nul ou perd de 3 points ou moins",
+            "cote": 1.38
         }
     ]
 }

@@ -1,8 +1,10 @@
 import requests
+import time
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
 import re
+import pytz
 
 
 def scrap_sport(url):
@@ -21,8 +23,11 @@ def scrap_sport(url):
     seen_matches = set()
 
     print(f"Scraping URL: {url}")
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers)  
         response.raise_for_status()
         response.encoding = response.apparent_encoding
     except requests.RequestException as e:
@@ -106,7 +111,8 @@ def scrap_sport(url):
         opposition.extend(new_opposition)
     else:
         print("================================")
-        print("Erreur lors de la récupération des données, veuillez vérifier l'URL")
+        print(f"Erreur lors de la récupération des données. Code de statut : {response.status_code}")
+        print(f"Contenu de la réponse : {response.text[:500]}...")  
         return []
 
     return opposition
@@ -120,32 +126,36 @@ def save_data(data):
     #
     # Sauvegarder les données dans le fichier
     #
-    current_date = datetime.now().strftime("%Y-%m-%d") 
+    # Définir le fuseau horaire de Paris
+    paris_tz = pytz.timezone('Europe/Paris')
+
+    current_date = datetime.now(paris_tz).strftime("%Y-%m-%d")
     filename = f"pronostics_{current_date}.json"
 
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 def main():
-    sports_urls = {
-        "football": "https://www.sportytrader.com/pronostics/football/",
-        "tennis": "https://www.sportytrader.com/pronostics/tennis/",
-        "basket": "https://www.sportytrader.com/pronostics/basket/",
-        "rugby": "https://www.sportytrader.com/pronostics/rugby/",
-        "handball": "https://www.sportytrader.com/pronostics/handball/",
-    }
+    sports = ['football', 'tennis', 'basket', 'rugby', 'handball']
 
     all_sports_data = {}
 
-    for sport, url in sports_urls.items():
+    for sport in sports:
         print(f"Scraping data for {sport}")
-        sport_data = scrap_sport(url)
-        if sport_data:
-            all_sports_data[sport] = sport_data
+        url = f"https://www.sportytrader.com/pronostics/{sport}/"
+        print(f"Scraping URL: {url}")
+        print("================================")
+        
+        html_content = scrap_sport(url)
+        if html_content:
+            all_sports_data[sport] = html_content
+        else:
+            print(f"Échec du scraping pour {sport}")
+        
+        time.sleep(5)  # 5 secondes avant la prochaine requête
 
     save_data(all_sports_data)
     print("Fichier JSON créé avec succès !")
 
 if __name__ == "__main__":
     main()
-
