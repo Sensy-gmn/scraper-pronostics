@@ -29,7 +29,7 @@ def scrap_sport(url):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
     try:
-        response = requests.get(url, headers=headers)  
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
         response.encoding = response.apparent_encoding
     except requests.RequestException as e:
@@ -127,6 +127,9 @@ def save_data(data):
 
     matches_collection = db.matches
 
+    inserted_count = 0
+    updated_count = 0
+
     for sport, matches in data.items():
         for match in matches:
             match_document = {
@@ -143,17 +146,23 @@ def save_data(data):
             # id unique pour chaque match
             match_id = f"{match['jour']}_{match['heure']}_{match['opposant_1']}_{match['opposant_2']}"
 
-            # update_one  éviter les doublons
+            # update_one éviter les doublons
             result = matches_collection.update_one(
                 {'_id': match_id},
                 {'$set': match_document},
                 upsert=True
             )
 
+            if result.upserted_id:
+                inserted_count += 1
+            elif result.modified_count > 0:
+                updated_count += 1
+
     print(f"Données sauvegardées/mises à jour dans MongoDB avec succès !")
+    print(f"Nouveaux documents insérés : {inserted_count}")
+    print(f"Documents mis à jour : {updated_count}")
 
 def get_database():
-    
     load_dotenv()
     connection_string = os.getenv('MONGODB_URI')
     client = MongoClient(connection_string)
